@@ -11,7 +11,7 @@
       <div class="clock-face">
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div class="hand sec-hand"></div>
       </div>
     </div>
 
@@ -58,17 +58,49 @@
 
     .hand {
       width:50%;
-      height:6px;
+      height:4px;
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100%;   /* on x-axis; this makes the 'pivot point' the right edge */
+      transform: rotate(90deg); /* init pos is 9 o'clock; make it 12:00 */
+      transition: all 0.5sec;
+    }
+
+    .hour-hand {
+      height: 6px;
+      width: 50%;
+      background: red;
+    }
+    .sec-hand {
+      height: 2px;
+      background: yellow;
     }
 
   </style>
 
   <script>
+    const secHand = document.querySelector('.sec-hand');
+    const minHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
 
+    function setDate() {
+      const now = new Date()
 
+      const secs = now.getSeconds();
+      const secDegs = ((secs / 60)  * 360) + 90;
+      secHand.style.transform = `rotate(${secDegs}deg)`;
+
+      const mins = now.getMinutes();
+      const minDegs = ((mins / 60)  * 360) + 90;
+      minHand.style.transform = `rotate(${minDegs}deg)`;
+
+      const hours = now.getHours();
+      const hourDegs = ((hours / 12)  * 360) + 90;
+      hourHand.style.transform = `rotate(${hourDegs}deg)`;
+    }
+
+setInterval(setDate, 1000);
   </script>
 </body>
 </html>
