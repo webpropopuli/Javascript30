@@ -9,7 +9,7 @@
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const dogs = [{ name: 'Finn', age: 7, bites: 'anything' }, { name: 'Molly', age: 7, bites: 'Finn' }];
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -17,44 +17,27 @@
       p.style.fontSize = '50px';
     }
 
-    // Regular
-    console.log('hello');
-
-    // Interpolated
-    console.log('Hello I am a %s string!', '💩');
-
     // Styled
-    // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+    const styl = 'font-size:50px; background:red; text-shadow: 5px 5px 0 blue';
+    console.log('%c I am some great text', styl)
 
     // warning!
     console.warn('OH NOOO');
 
-    // Error :|
-    console.error('Shit!');
-
-    // Info
-    console.info('Crocodiles eat 3-4 people per year');
-
     // Testing
     const p = document.querySelector('p');
-
-    console.assert(p.classList.contains('ouch'), 'That is wrong!');
-
-    // clearing
-    console.clear();
+    console.assert(p.classList.contains('notHere', 'That is wrong!'));
 
     // Viewing DOM Elements
-    console.log(p);
+    console.log(`Here is the console.dir for <p>`);
     console.dir(p);
 
-    console.clear();
-
-    // Grouping together
+      // Grouping together
     dogs.forEach(dog => {
       console.groupCollapsed(`${dog.name}`);
       console.log(`This is ${dog.name}`);
       console.log(`${dog.name} is ${dog.age} years old`);
-      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.log(`${dog.name} likes to bite ${dog.bites}`);
       console.groupEnd(`${dog.name}`);
     });
 
@@ -62,15 +45,6 @@
 
     console.count('Wes');
     console.count('Wes');
-    console.count('Steve');
-    console.count('Steve');
-    console.count('Wes');
-    console.count('Steve');
-    console.count('Wes');
-    console.count('Steve');
-    console.count('Steve');
-    console.count('Steve');
-    console.count('Steve');
     console.count('Steve');
 
     // timing
