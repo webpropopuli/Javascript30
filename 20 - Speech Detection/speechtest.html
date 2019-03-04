@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Playing with Speech APIs</title>
+  </head>
+  <body>
+    <div class="textArea" contenteditable>
+      <button class="status">{status}</button>
+      <button class="confidence">{confidence}</button>
+    </div>
+
+    <p class="altArea"></p>
+    <scroll-container reversed class="boxMouse">
+      <div><strong>Log:</strong></div>
+      <div class="logMouse"></div>
+    </scroll-container>
+    <script src="speak.js"></script>
+  </body>
+</html>

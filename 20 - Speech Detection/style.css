@@ -1,0 +1,51 @@
+html {
+  font-size: 12px;
+}
+
+body {
+  position: relative;
+  background: #555;
+  font-family: "helvetica neue";
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.altArea {
+  max-width: 500px;
+  margin: 20px auto;
+  background: black;
+  color: yellowgreen;
+}
+
+.textArea {
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  background: #99aab3;
+  background-size: 100%;
+  position: relative;
+  line-height: 3rem;
+}
+p {
+  margin: 0 0 3rem;
+}
+
+.boxMouse {
+  display: block;
+  width: 300px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 2px 4px;
+  overflow-y: auto;
+  overflow-x: auto;
+  position: absolute;
+  right: 0;
+  margin: 0 auto;
+}
+
+.logMouse {
+  margin-top: 8px;
+  font-family: monospace;
+  font-size: 0.5em;
+}
